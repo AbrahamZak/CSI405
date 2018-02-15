@@ -1,3 +1,15 @@
+// What strategy you used to store the morse code encoding table and WHY?
+
+/* I used a switch statement to store the morse code encoding table. This is because
+ * the switch statement allows me to have an organized table that I can call at
+ * any time to translate the code letter by letter. It also has an easy to use default to
+ * prevent bugs, since if someone inputs invalid code the program will just default to a space
+ * (this could be expanded upon to input an error message instead but I chose not to do that
+ * for the assignment purposes).
+ * 
+ * The switch is also very readable and easy to adjust if necessary.
+*/
+
 package edu.albany.hw2.morse;
 
 public class MorseTranslator {
@@ -7,7 +19,7 @@ public class MorseTranslator {
 	//While all words are separated by a slash (/)
 	//This method uses a switch to convert characters from Morse to English/punctuation/numbers
 	//It finds a match and then returns the converted String
-	public static String Translate(String morseChar) {
+	private static String Translate(String morseChar) {
 		 switch (morseChar) {
 		 case ".-":
 			 return "a";
@@ -91,7 +103,7 @@ public class MorseTranslator {
 			 return " ";
 			 
 		 default: 
-			 return null;
+			 return "";
 		 }
 	}
 	//This method splits our user inputted String and prints out the translated version
